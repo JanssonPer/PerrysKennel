@@ -36,13 +36,27 @@ ul.topnav li.right {float: right;}
     #container {
         width: 100%;}
 
-    footer {
-        width
+    footer { font-size: .70em;
+        text-align: center;
+        color: #006600;
+        background-color: #636631;
+        padding-top: 10px;
+        clear: both;
+        margin-right:45%;
     }
 
     aside {
         float: right;
         width: 45%;
+        background-color: aqua;
+    }
+
+    #news1{
+        background-color: #ffff00;
+    }
+
+    #news2{
+        background-color: #ffff00;
     }
 
     ul {
@@ -55,6 +69,7 @@ ul.topnav li.right {float: right;}
 
     li {
         float: left;
+        text-align: center;
     }
 
     li a {
@@ -72,14 +87,6 @@ ul.topnav li.right {float: right;}
     .active {
         background-color: #4CAF50;
     }
-
-    footer { font-size: .70em;
-        text-align: center;
-        color: #006600;
-        background-color: #636631;
-        padding-top: 10px;
-        clear: both; }
-
 }
 
 
@@ -104,25 +111,60 @@ ul.topnav li.right {float: right;}
         padding: 0 20px;
         border-bottom: 2px solid #000000; }
 
-    aside { float: right;
-        width: 200px; }
+    ul {
+        display:inline-block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        vertical-align: middle;
+    }
 
-    main { margin: 0 210px 0 160px;
-        padding: 1px 10px 20px 10px;
-        background-color: #ffff00;
-        color: #006600; }
-
-    nav{
-        float: left;
-        width: 150px; }
+    li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
     }
 
 
+    li a:hover {
+        background-color: #555;
+        color: white;
+    }
+
+    aside { float: right;
+        width: 30%; }
+
+    main {
+        margin: 1% 20% 20% 11%;
+        padding-left: 40px;
+        background-color: #ffff00;
+        color: #006600;
+        width: 60%;
+    }
+
+    #buttons{
+        float:left;
+        text-align: center;
+    width: 55%;
+        background-color: #006600;
+    }
+
+    nav{
+        float:left;
+        text-align: center;
+        width: 10%;
+        background-color: #333;
+    }
     footer { font-size: .70em;
         text-align: center;
         color: #006600;
         background-color: #636631;
         padding-top: 10px;
-        clear: both; }
+        clear: both;
+        width: 100%;
+    }
 
 }
