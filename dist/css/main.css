@@ -1,10 +1,15 @@
+ul{
+    font-family:sans-serif;
+    font-weight: bold;
+}
+
 /*Mobile*/
 ul.topnav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #f1d204;
 }
 
 ul.topnav li {float: left;}
@@ -17,7 +22,7 @@ ul.topnav li a {
     text-decoration: none;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
+ul.topnav li a:hover:not(.active) {background-color: #f1d204;}
 
 ul.topnav li a.active {background-color: #4CAF50;}
 
@@ -40,7 +45,6 @@ ul.topnav li.right {float: right;}
         text-align: center;
         color: #006600;
         background-color: #636631;
-        padding-top: 10px;
         clear: both;
         margin-right:45%;
     }
@@ -52,11 +56,19 @@ ul.topnav li.right {float: right;}
     }
 
     #news1{
-        background-color: #ffff00;
+        background-color: chartreuse;
+        padding: 5%;
+        color:black;
+
+    }
+
+    #news1Img {
+        width: 100%;
     }
 
     #news2{
-        background-color: #ffff00;
+        background-color: darkmagenta;
+        padding: 5%;
     }
 
     ul {
@@ -64,7 +76,7 @@ ul.topnav li.right {float: right;}
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background-color: #333;
+        background-color: #f1d204;
     }
 
     li {
@@ -74,14 +86,14 @@ ul.topnav li.right {float: right;}
 
     li a {
         display: block;
-        color: white;
+        color: black;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
     }
 
     li a:hover:not(.active) {
-        background-color: #111;
+        background-color: white;
     }
 
     .active {
@@ -92,79 +104,107 @@ ul.topnav li.right {float: right;}
 
 /*Desktop*/
 @media only screen and (min-width: 1024px) {
-    header, nav, main, footer, aside { display: block; }
+    header, main, footer, aside { display: block; }
 
-    body { margin:0;
+    body {
+        margin:0;
         background-color: #ffffff; }
 
-    #container { background-color: #cc66cc;
+    #container {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: #cc66cc;
         color: #006600;
-        font-family: Verdana, Arial, sans-serif; }
+        font-family: Verdana, Arial, sans-serif;
+        width:100%;
+    }
 
     header { background-color: #636631;
-        background-image: url(showybg.jpg);
-        background-position: bottom;
-        background-repeat: repeat-x;
-        height: 300px;
-        color: #cc66cc;
+        background-image: url(1233168716_resized.jpg);
+        background-position: 0, 90px;
+        background-size:100%;
+        background-repeat: no-repeat;
+        height: 500px;
+        color: white;
         text-align: right;
-        padding: 0 20px;
-        border-bottom: 2px solid #000000; }
+        border-bottom: 4px solid white; }
 
     ul {
         display:inline-block;
         list-style-type: none;
         margin: 0;
         padding: 0;
-        width: 100%;
-        background-color: #f1f1f1;
+        width: 135px;
+        background-color: #f1d204;
         vertical-align: middle;
+        position:relative;
     }
 
     li a {
         display: block;
-        color: #000;
-        padding: 8px 16px;
+        color: #f1d204;
+        padding: 0px 0px;
         text-decoration: none;
     }
 
 
     li a:hover {
-        background-color: #555;
-        color: white;
+        background-color:white;
     }
 
-    aside { float: right;
-        width: 30%; }
+    aside {
+        float: right;
+        height: 100%;
+        width: 30%;
+        }
 
     main {
-        margin: 1% 20% 20% 11%;
-        padding-left: 40px;
+        margin: 0% 0% 0% 10%;
         background-color: #ffff00;
-        color: #006600;
         width: 60%;
-    }
-
-    #buttons{
-        float:left;
-        text-align: center;
-    width: 55%;
-        background-color: #006600;
+        height: 100%;
+        min-height: 100%;
     }
 
     nav{
         float:left;
-        text-align: center;
+        text-align: left;
         width: 10%;
-        background-color: #333;
+        min-width: 135px;
+        height: 100%;
+        background-color: #f1d204;
     }
-    footer { font-size: .70em;
+    footer {
+        font-size: .70em;
         text-align: center;
         color: #006600;
         background-color: #636631;
-        padding-top: 10px;
-        clear: both;
         width: 100%;
+    }
+
+    h2 {
+        margin-top:0;
+    }
+
+    h3 {
+        font-family:sans-serif;
+        font-weight:bold;
+        color: black;
+    }
+
+    h1{
+        padding-right:3%;
+    }
+
+    #logo{
+        padding-right: 6%;
+        width:128px;
+        height:128px
+    }
+
+    p{
+        color: black;
     }
 
 }
