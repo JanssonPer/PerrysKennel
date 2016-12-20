@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <title>Door County Wildflowers</title>
+
+    <title>Perrys Kennel</title>
  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script type="text/javascript" src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/clock.js"></script>
+
+
 </head>
-<body>
+<body onload="startTime()">
 <div id="container">
     <header role="banner">
-        <span><a href="#content">Skip to Content</a></span>
-        <h1>Perrys Kennel</h1>
-        <img id="logo" src="css/qcBXAp5xi.png" >
+
+        <h1 id="logoText">Perrys Kennel</h1>
+
+        <img id="logo" src="img/logo.png" >
     </header>
     <nav id="nav" role="navigation">
         <ul class ="topnav">
             <li><a href="index.html">Hem</a></li>
-            <li><a href="hundar.html">Mina hundar</a></li>
+            <li><a href="minaHundar.html">Mina hundar</a></li>
             <li><a href="kennel.html">Kennel</a></li>
             <li><a href="hundskola.html">Hundskola</a></li>
             <li><a href="bildgalleri.html">Bildgalleri</a></li>
-            <li><a href="gastbok.html">Gastbok</a></li>
+            <li><a href="gastbok.html">Gästbok</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
 
         </ul>
@@ -29,22 +38,22 @@
 <aside>
     <div role="complementary">
         <div id="news1">
-           <img id="news1img" src="css/1236115591_resized.jpg">
-        <h3>Hundkurser</h3>
+           <img id="news1img" src="img/new1.jpg">
+        <h3 id="h3Index">Hundkurser</h3>
         <p class="news">Här på Perrys Kennel erbjuder vi också hundkurser.
             Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
             stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
             ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel.
-            <a href="hundskola.html">Hundkurser</a>.</p>
+        </p>
+            <button id="btn" formmethod=link formaction="hundskola.html"   type="button">Hundskola</button>
         </div>
 
         <div id="news2">
-            <img id="news1img" src="css/1250448370_resized.jpg">
-        <h3>Newport State Park</h3>
-        <p class="news">The
-            <a href="http://newportwildernesssociety.org">Newport Wilderness
-                Society</a> sponsors free meadow hikes at 9am every Saturday. Stop by
-            the park office to register.</p>
+            <img id="news1img" src="img/new2.jpg">
+        <h3>Nya valpar</h3>
+        <p class="news">
+            Nya valpar, små, söta och snälla.</p>
+        </div>
         </div>
     </aside>
 
@@ -56,14 +65,13 @@
             sina nya hem. Funderar ni på att skaffa en Rhodesian Ridgeback, så är du hjärtligt välkommen att höra av dig till mig
             med dina frågor eller för allmänt "hundprat".</p>
         </div>
-        <p>The variety of ecosystems supports a large number of wildflower
-            species.</p>
-        <img id="FirstMainImg" src="css/1233784554_resized.jpg">
-        <h3>Explore the beauty <br>of Door County Wildflowers....</h3>
-        <p>With five state parks, tons of county parks, and private nature
-            sanctuaries, Door County is teeming with natural areas for you to
-            stalk your favorite wildflowers.Här på Perrys Kennel erbjuder vi också hundkurser.
 
+        <div id="main1">
+
+            <img id="FirstMainImg" src="img/main1.jpg">
+
+            <h3>Hundkurser</h3>
+        <p id="p1">
             Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
             stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
             ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
@@ -72,100 +80,34 @@
             Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
             lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
             Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.
+            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.</p>
+        </div>
 
-            Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
-            stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
-            ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
-            söndag över 4 veckor, eller som intensivkurs över en lördag och söndag.
-
-            Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
-            lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
-            Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.
-
-            Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
-            stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
-            ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
-            söndag över 4 veckor, eller som intensivkurs över en lördag och söndag.
-
-            Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
-            lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
-            Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.
-
-            Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
-            stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
-            ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
-            söndag över 4 veckor, eller som intensivkurs över en lördag och söndag.
-
-            Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
-            lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
-            Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.
-
-            Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
-            stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
-            ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
-            söndag över 4 veckor, eller som intensivkurs över en lördag och söndag.
-
-            Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
-            lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
-            Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.
-
-            Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
-            stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
-            ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
-            söndag över 4 veckor, eller som intensivkurs över en lördag och söndag.
-
-            Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
-            lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
-            Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.
-
-            Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
-            stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
-            ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
-            söndag över 4 veckor, eller som intensivkurs över en lördag och söndag.
-
-            Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
-            lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
-            Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.
-
-            Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
-            stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
-            ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
-            söndag över 4 veckor, eller som intensivkurs över en lördag och söndag.
-
-            Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
-            lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
-            Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.
-
-            Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
-            stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
-            ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
-            söndag över 4 veckor, eller som intensivkurs över en lördag och söndag.
-
-            Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
-            lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
-            Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.Här på Perrys Kennel erbjuder vi också hundkurser.
-
-            Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
-            stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
-            ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel. Denna kurs erbjuds antingen varje
-            söndag över 4 veckor, eller som intensivkurs över en lördag och söndag.
-
-            Våran unghundskurs erbjuds som fortsättningskurs när er hund blivit 6 månader gammal och denna kursen löper över varje
-            lördag under 8 veckor. Under denna kursen så kommer vi fokusera på att stärka bandet ännu mer mellan hund och hundförare.
-            Vi kommer träna på att gå fot, träna på att gå lös i närheten av andra hundar samt lite fler tricks så som rulla runt,
-            skall och även lite nosework övningar.</p>
+        </div>
     </main>
-    <footer role="contentinfo"> Copyright &copy; 2014 Door County Wild
-        Flowers<br>
+
+    <footer role="contentinfo">
+
+       <p id="authors">  Grupp 1<br>
+            Erik Bråtendal<br>
+            Per Jansson<br>
+            Louise Lam <br>
+       </p>
+
+        <p id="lastModified">
+            <script language="Javascript">
+                document.write("Last updated on " + document.lastModified +"");
+            </SCRIPT>
+        </p>
+
+
+        <div id="clockdate">
+            <div class="clockdate-wrapper">
+                <div id="clock"></div>
+                <div id="date"></div>
+            </div>
+        </div>
+
     </footer>
 </div>
 </body>

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <title>Door County Wildflowers</title>
+
+    <title>Perry Kennel</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/tablet.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
+
+    <script type="text/javascript" src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/clock.js"></script>
+
 </head>
 <body>
 <div id="container">
     <header role="banner">
         <span><a href="#content">Skip to Content</a></span>
-        <h1>Perrys Kennel</h1>
-        <img id="logo" src="css/qcBXAp5xi.png" style="width:128px;height:128px;" >
+        <h1 id="logoText"> Perrys Kennel</h1>
+        <img id="logo" src="img/logo.png" style="width:128px;height:128px;" >
     </header>
     <nav id="nav" role="navigation">
         <ul class ="topnav">
             <li><a href="index.html">Hem</a></li>
-            <li><a href="hundar.html">Mina hundar</a></li>
+            <li><a href="minaHundar.html">Mina hundar</a></li>
             <li><a href="kennel.html">Kennel</a></li>
             <li><a href="hundskola.html">Hundskola</a></li>
             <li><a href="bildgalleri.html">Bildgalleri</a></li>
@@ -58,10 +67,31 @@
         <p>With five state parks, tons of county parks, and private nature
             sanctuaries, Door County is teeming with natural areas for you to
             stalk your favorite wildflowers.</p>
-        <footer role="contentinfo"> Copyright &copy; 2014 Door County Wild
-            Flowers<br>
-        </footer>
+
     </main>
+
+    <footer role="contentinfo">
+
+        <p id="authors">  Grupp 1<br>
+            Erik Bråtendal<br>
+            Per Jansson<br>
+            Louise Lam <br>
+        </p>
+
+        <p id="lastModified">
+            <script language="Javascript">
+                document.write("Last updated on " + document.lastModified +"");
+            </SCRIPT>
+        </p>
+
+        <div id="clockdate">
+            <div class="clockdate-wrapper">
+                <div id="clock"></div>
+                <div id="date"></div>
+            </div>
+        </div>
+
+    </footer>
 
 </div>
 </body>
