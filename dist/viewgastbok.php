@@ -60,69 +60,86 @@
     <main role="main" id="content">
         <table width="400" border="0" align="center" cellpadding="3" cellspacing="0">
             <tr>
-                <td><strong>Test Sign Guestbook </strong></td>
+                <td><strong>View Guestbook | <a href="gastbok.html">Sign Guestbook</a> </strong></td>
             </tr>
         </table>
+        <br>
+        <?php
+
+$host="localhost"; // Host name
+$username="root"; // Mysql username
+$password=""; // Mysql password
+$db_name="perryskennel"; // Database name
+$tbl_name="guestbook"; // Table name
+
+// Connect to server and select database.
+$con =mysqli_connect("$host", "$username", "$password", $db_name)or die("cannot connect server ");
+mysqli_select_db($con, "$db_name")or die("cannot select DB");
+$sql="SELECT * FROM $tbl_name";
+$result=mysqli_query($con, $sql);
+while($rows=mysqli_fetch_assoc($result)){
+    ?>
         <table width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
             <tr>
-                <form method="POST" action="addgastbok.php">
-                    <td>
-                        <table width="400" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-                            <tr>
-                                <td width="117">Name</td>
-                                <td width="14">:</td>
-                                <td width="357"><input name="name" type="text" id="name" size="40" /></td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>:</td>
-                                <td><input name="email" type="text" id="email" size="40" /></td>
-                            </tr>
-                            <tr>
-                                <td valign="top">Comment</td>
-                                <td valign="top">:</td>
-                                <td><textarea name="comment" cols="35" rows="3" id="comment"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td><input type="submit" name="Submit" value="Submit" /> <input type="reset" name="Submit2" value="Reset" /></td>
-                            </tr>
-                        </table>
-                    </td>
-                </form>
+                <td><table width="400" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+                    <tr>
+                        <td>ID</td>
+                        <td>:</td>
+                        <td><?php echo $rows['id']; ?></td>
+                    </tr>
+                    <tr>
+                        <td width="117">Name</td>
+                        <td width="14">:</td>
+                        <td width="357"><?php echo $rows['name']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td><?php echo $rows['email']; ?></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">Comment</td>
+                        <td valign="top">:</td>
+                        <td><?php echo $rows['comment']; ?></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">Date/Time </td>
+                        <td valign="top">:</td>
+                        <td><?php echo $rows['datetime']; ?></td>
+                    </tr>
+                </table></td>
             </tr>
         </table>
-        <table width="400" border="0" align="center" cellpadding="3" cellspacing="0">
-            <tr>
-                <td><strong><a href="viewgastbok.php">View Guestbook</a> </strong></td>
-            </tr>
-        </table>
-</main>
 
-<footer role="contentinfo">
+        <?php
+}
+mysqli_close($con); //close database
+?>
+    </main>
 
-    <p id="authors">  Grupp 1<br>
-        Erik Bråtendal<br>
-        Per Jansson<br>
-        Louise Lam <br>
-    </p>
+    <footer role="contentinfo">
 
-    <p id="lastModified">
-        <script language="Javascript">
-            document.write("Last updated on " + document.lastModified +"");
-        </SCRIPT>
-    </p>
+        <p id="authors">  Grupp 1<br>
+            Erik Bråtendal<br>
+            Per Jansson<br>
+            Louise Lam <br>
+        </p>
+
+        <p id="lastModified">
+            <script language="Javascript">
+                document.write("Last updated on " + document.lastModified +"");
+            </SCRIPT>
+        </p>
 
 
-    <div id="clockdate">
-        <div class="clockdate-wrapper">
-            <div id="clock"></div>
-            <div id="date"></div>
+        <div id="clockdate">
+            <div class="clockdate-wrapper">
+                <div id="clock"></div>
+                <div id="date"></div>
+            </div>
         </div>
-    </div>
 
-</footer>
+    </footer>
 </div>
 </body>
 </html>
