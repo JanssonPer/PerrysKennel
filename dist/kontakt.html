@@ -7,15 +7,13 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/tablet.css">
-    <link rel="stylesheet" type="text/css" href="css/mobile.css">
 
     <script type="text/javascript" src="js/vendor/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/clock.js"></script>
 
 </head>
-<body>
+<body onload="startTime()">
 <div id="container">
     <header role="banner">
         <span><a href="#content">Skip to Content</a></span>
@@ -29,7 +27,7 @@
             <li><a href="kennel.html">Kennel</a></li>
             <li><a href="hundskola.html">Hundskola</a></li>
             <li><a href="bildgalleri.html">Bildgalleri</a></li>
-            <li><a href="gastbok.html">Gastbok</a></li>
+            <li><a href="gastbok.html">Gästbok</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
 
         </ul>
@@ -38,20 +36,25 @@
     <aside>
         <div role="complementary">
             <div id="news1">
-                <h3>The Ridges</h3>
-                <p class="news">The Ridges Nature Sanctuary offers wild
-                    orchid hikes during the summer months. For more info, visit
-                    <a href="http://ridgessanctuary.org">The Ridges</a>.</p>
+                <img id="news1img" src="img/new1.jpg">
+                <h3>Hundkurser</h3>
+                <p class="news">Här på Perrys Kennel erbjuder vi också hundkurser.
+                    Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
+                    stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
+                    ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel.
+                </p>
+                <button id="btn" onclick="location.href='hundskola.html'"   type="button">Hundskola</button>
             </div>
 
-            <div id="news2"></div>
-            <h3>Newport State Park</h3>
-            <p class="news">The
-                <a href="http://newportwildernesssociety.org">Newport Wilderness
-                    Society</a> sponsors free meadow hikes at 9am every Saturday. Stop by
-                the park office to register.</p>
-        </div>
+            <div id="news2">
+                <img id="news1img" src="img/new2.jpg">
+                <h3>Nya valpar </h3>
+                <p class="news">
+                    Nya valpar, små, söta och snälla.
 
+                </p>
+            </div>
+        </div>
     </aside>
 
     <main role="main" id="content">
