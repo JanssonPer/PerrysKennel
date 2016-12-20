@@ -44,7 +44,7 @@
                     <a href="http://ridgessanctuary.org">The Ridges</a>.</p>
             </div>
 
-            <div id="news2"
+            <div id="news2"></div>
             <h3>Newport State Park</h3>
             <p class="news">The
                 <a href="http://newportwildernesssociety.org">Newport Wilderness
@@ -55,18 +55,37 @@
     </aside>
 
     <main role="main" id="content">
-        <h2>Kontakt</h2>
-        <p>Wisconsin&rsquo;s Door County Peninsula is ecologically diverse
-            &mdash; upland and boreal forest, bogs, swamps, sand and rock beaches,
-            limestone escarpments, and farmlands.</p>
-        <p>The variety of ecosystems supports a large number of wildflower
-            species.</p>
-        <img src="trillium.jpg" width="200" height="150" alt="Trillium"
-             id="floatright">
-        <h3>Explore the beauty <br>of Door County Wildflowers....</h3>
-        <p>With five state parks, tons of county parks, and private nature
-            sanctuaries, Door County is teeming with natural areas for you to
-            stalk your favorite wildflowers.</p>
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <style>
+                #map {
+                    height: 400px;
+                    width: 100%;
+                }
+            </style>
+        </head>
+        <body>
+        <h3>Kontaktuppgifter</h3>
+        <div id="map"></div>
+        <script>
+            function initMap() {
+                var uluru = {lat: 55.703409, lng: 13.192097};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 16,
+                    center: uluru
+                });
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+            }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjf9wQ3K54TNJpqxO8RQVaEspDPpizqKQ&callback=initMap">
+        </script>
+        </body>
+        </html>
 
     </main>
 
