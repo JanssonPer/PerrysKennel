@@ -39,13 +39,13 @@
         <div role="complementary">
             <div id="news1">
                 <img id="news1img" src="img/new1.jpg">
-                <h3>Hundkurser</h3>
+                <h3 id="h3Index">Hundkurser</h3>
                 <p class="news">Här på Perrys Kennel erbjuder vi också hundkurser.
                     Vår valpkurs är vår populäraste och vi rekommenderar denna för alla nya hundägare då den erbjuder en bra grund och
                     stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
                     ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel.
                 </p>
-                <button id="btn" formmethod=link formaction="hundskola.html"   type="button">Hundskola</button>
+                <button id="btn" form method="link" action="hundskola.php" input type="submit">Hundskola</button>
             </div>
 
             <div id="news2">
@@ -58,42 +58,66 @@
     </aside>
 
     <main role="main" id="content">
-        <br>
-        <strong>Skriv gärna i vår gästbok! </strong>
+        <div id="welcome">
+            <h2>Välkommen!</h2>
+            <p>Batuulis kennel bedriver en liten och engagerad uppfödning av Rhodesian Ridgeback i Hindås utanför Göteborg.
+                Min ambition är att föda upp sunda, trevliga & rastypiska hundar, som framför allt ska fungera som familjemedlemmar i
+                sina nya hem. Funderar ni på att skaffa en Rhodesian Ridgeback, så är du hjärtligt välkommen att höra av dig till mig
+                med dina frågor eller för allmänt "hundprat".</p>
+        </div>
 
-        <table width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#F1D204">
-            <tr>
-                <form method="POST" action="addgastbok.php">
-                    <td>
-                        <table width="400" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-                            <tr>
-                                <td width="117">Name</td>
-                                <td width="14">:</td>
-                                <td width="357"><input name="name" type="text" id="name" size="37" /></td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>:</td>
-                                <td><input name="email" type="text" id="email" size="37" /></td>
-                            </tr>
-                            <tr>
-                                <td valign="top">Comment</td>
-                                <td valign="top">:</td>
-                                <td><textarea name="comment" cols="37" rows="3" id="comment"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td><input type="submit" name="Submit" value="Submit" /> <input type="reset" name="Submit2" value="Reset" /></td>
-                            </tr>
-                        </table>
-                    </td>
-                </form>
-            </tr>
-        </table>
+        <div id="main1">
 
-        <br>
-        <strong><a href="viewgastbok.php">Se gästboksinlägg</a> </strong>
+            <style>
+                img {
+                    float: left;
+                    margin: 0px 0px 0px 0px;
+                }
+            </style>
+            <p>
+                <?php
+             //Establish connection to database
+                include 'dbconnect.php';
+
+             $select_posts = "select * from posts order by post_id DESC ";
+
+             $run_posts = mysqli_query($dbC, $select_posts);
+
+             while ($row=mysqli_fetch_array($run_posts)) {
+
+             $post_id = $row['post_id'];
+             $post_title = $row['post_title'];
+             $post_date = $row['post_date'];
+             $post_img = $row['post_img'];
+             $post_content = $row['post_content'];
+
+             ?>
+
+
+
+
+                <h3><p align="left"><?php echo $post_title; ?>
+            <img src="img/<?php echo $post_img; ?>" width="170" height="110"/>
+        </p></h3>
+
+
+            <p align="left"><?php echo $post_content ?></p>
+
+            <p align="left">Publicerat: <?php echo $post_date ?></p>
+
+            <hr>
+
+            <?php
+
+            }
+            ?>
+
+            </p>
+
+
+        </div>
+
+</div>
 </main>
 
 <footer role="contentinfo">
@@ -107,7 +131,7 @@
     <p id="lastModified">
         <script language="Javascript">
             document.write("Last updated on " + document.lastModified +"");
-        </SCRIPT>
+        </script>
     </p>
 
 

@@ -28,14 +28,15 @@ ul{
 #logo{
     width:128px;
     height:128px;
+    float: right;
 }
 
 header { background-color: #636631;
     background-image: url(../img/header.jpg);
     background-position: 0, 90px;
-    background-size:100%;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 500px;
+    height: 350px;
     color: white;
     text-align: right;
     border-bottom: solid 14px #F1D204}
@@ -169,7 +170,7 @@ ul.topnav li.right {float: right;}
     td
     {
         text-align:center;
-        padding: 1%;
+        padding: 0%;
     }
 
     #mira{
@@ -323,7 +324,7 @@ ul.topnav li.right {float: right;}
 
     td {
         text-align: center;
-        padding: 2%;
+        padding: 0%;
     }
 
     table {

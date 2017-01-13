@@ -22,13 +22,13 @@
     </header>
     <nav id="nav" role="navigation">
         <ul class ="topnav">
-            <li><a href="index.html">Hem</a></li>
+            <li><a href="index.php">Hem</a></li>
             <li><a href="minaHundar.html">Mina hundar</a></li>
-            <li><a href="kennel.html">Kennel</a></li>
-            <li><a href="hundskola.html">Hundskola</a></li>
+            <li><a href="kennel.php">Kennel</a></li>
+            <li><a href="hundskola.php">Hundskola</a></li>
             <li><a href="bildgalleri.html">Bildgalleri</a></li>
             <li><a href="gastbok.html">Gästbok</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
 
         </ul>
     </nav>
@@ -43,7 +43,7 @@
                     stärker relationen mellan hundförare och er nya valp. I denna kurs kommer vi gå igenom enkla kommandon så som sitt,
                     ligg, stanna kvar och komma på kommando och även träna på att gå utan koppel.
                 </p>
-                <button id="btn" onclick="location.href='hundskola.html'"   type="button">Hundskola</button>
+                <button id="btn" onclick="location.href='hundskola.php'" type="button">Hundskola</button>
             </div>
 
             <div id="news2">
@@ -58,6 +58,34 @@
     </aside>
 
     <main role="main" id="content">
+        <?php
+        if(isset($_POST['submit'])){
+
+            include 'dbconnect.php';
+
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $comment = $_POST['comment'];
+
+            if(empty($name)||empty($email)){
+                echo "Fyll i alla fälten!";
+                exit;
+            }
+
+            $sql="INSERT INTO email (name, email, comment)VALUES('$name', '$email', '$comment')";
+            $result=mysqli_query($dbC, $sql);
+            if($result){
+                echo "<h1>Mail inskickat</h1>";
+            } else {
+                echo "Inte Lyckat";
+            }
+
+        }
+
+
+
+        ?>
+
         <!DOCTYPE html>
         <html>
         <head>
@@ -89,6 +117,52 @@
         </script>
         </body>
         </html>
+
+        <p align="left">Namn: Perrys Kennel</p>
+        <p align="left">Adress: Lilla Fiskaregatan 2, Lund</p>
+        <p align="left">Tel: <a href=046112233>046112233</a></p>
+
+        <?php
+        error_reporting(0);
+        $msg = $_GET['msg'];  //GET the message
+        if($msg!='') echo '<p>'.$msg.'</p>';
+        ?>
+
+        <table width="400" border="0" align="center" cellpadding="3" cellspacing="0">
+            <tr>
+                <td><strong>Skicka gärna ett mail till Perrys Kennel</strong></td>
+            </tr>
+        </table>
+        <table width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#F1D204">
+            <tr>
+                <form method="POST" action="kontakt.php">
+                    <td>
+                        <table width="400" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+                            <tr>
+                                <td width="117">Namn</td>
+                                <td width="14">:</td>
+                                <td width="357"><input name="name" type="text" id="name" size="37" required/></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>:</td>
+                                <td><input name="email" type="email" id="email" size="37" required/></td>
+                            </tr>
+                            <tr>
+                                <td valign="top">Meddelande</td>
+                                <td valign="top">:</td>
+                                <td><textarea name="comment" cols="38" rows="5" id="comment"></textarea></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td><input type="submit" name="submit" value="Submit" /> <input type="reset" name="Submit2" value="Reset" /></td>
+                            </tr>
+                        </table>
+                    </td>
+                </form>
+            </tr>
+        </table>
 
     </main>
 

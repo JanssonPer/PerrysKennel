@@ -24,13 +24,13 @@
     </header>
     <nav id="nav" role="navigation">
         <ul class ="topnav">
-            <li><a href="index.html">Hem</a></li>
+            <li><a href="index.php">Hem</a></li>
             <li><a href="minaHundar.html">Mina hundar</a></li>
-            <li><a href="kennel.html">Kennel</a></li>
-            <li><a href="hundskola.html">Hundskola</a></li>
+            <li><a href="kennel.php">Kennel</a></li>
+            <li><a href="hundskola.php">Hundskola</a></li>
             <li><a href="bildgalleri.html">Bildgalleri</a></li>
             <li><a href="gastbok.html">Gästbok</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
 
         </ul>
     </nav>
@@ -58,24 +58,21 @@
     </aside>
     <main role="main" id="content">
         <?php
-$host="localhost"; // Host name
-$username="root"; // Mysql username
-$password=""; // Mysql password
-$db_name="perryskennel"; // Database name
-$tbl_name="guestbook"; // Table name
+
+        include 'dbconnect.php';
 
 $name = $_POST['name'];
 $email = $_POST['email'];
 $comment = $_POST['comment'];
 
 // Connect to server and select database.
-$con =mysqli_connect("$host", "$username", "$password", $db_name)or die("cannot connect server ");
-mysqli_select_db($con,"$db_name")or die("cannot select DB");
+//$con =mysqli_connect("$host", "$username", "$password", $db_name)or die("cannot connect server ");
+//mysqli_select_db($con,"$db_name")or die("cannot select DB");
 
 $datetime=date("y-m-d h:i:s"); //date time
 
-$sql="INSERT INTO $tbl_name(name, email, comment, datetime)VALUES('$name', '$email', '$comment', '$datetime')";
-$result=mysqli_query($con, $sql);
+$sql="INSERT INTO guestbook(name, email, comment, datetime)VALUES('$name', '$email', '$comment', '$datetime')";
+$result=mysqli_query($dbC, $sql);
 
 //check if query successful
 if($result){
@@ -89,7 +86,7 @@ if($result){
         else {
         echo "ERROR";
         }
-        mysqli_close($con);
+        mysqli_close($dbC);
 ?>
 </main>
 

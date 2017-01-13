@@ -24,13 +24,13 @@
     </header>
     <nav id="nav" role="navigation">
         <ul class ="topnav">
-            <li><a href="index.html">Hem</a></li>
+            <li><a href="index.php">Hem</a></li>
             <li><a href="minaHundar.html">Mina hundar</a></li>
-            <li><a href="kennel.html">Kennel</a></li>
-            <li><a href="hundskola.html">Hundskola</a></li>
+            <li><a href="kennel.php">Kennel</a></li>
+            <li><a href="hundskola.php">Hundskola</a></li>
             <li><a href="bildgalleri.html">Bildgalleri</a></li>
             <li><a href="gastbok.html">Gästbok</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
 
         </ul>
     </nav>
@@ -58,28 +58,18 @@
     </aside>
 
     <main role="main" id="content">
-        <table width="400" border="0" align="center" cellpadding="3" cellspacing="0">
-            <tr>
-                <td><strong>View Guestbook | <a href="gastbok.html">Sign Guestbook</a> </strong></td>
-            </tr>
-        </table>
+        <br>
+        <strong>Gästbok | <a href="gastbok.html">Nytt gästboksinlägg</a> </strong>
         <br>
         <?php
 
-$host="localhost"; // Host name
-$username="root"; // Mysql username
-$password=""; // Mysql password
-$db_name="perryskennel"; // Database name
-$tbl_name="guestbook"; // Table name
+        include 'dbconnect.php';
 
-// Connect to server and select database.
-$con =mysqli_connect("$host", "$username", "$password", $db_name)or die("cannot connect server ");
-mysqli_select_db($con, "$db_name")or die("cannot select DB");
-$sql="SELECT * FROM $tbl_name";
-$result=mysqli_query($con, $sql);
-while($rows=mysqli_fetch_assoc($result)){
-    ?>
-        <table width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+        $sql="SELECT * FROM guestbook";
+        $result = mysqli_query($dbC, $sql);
+        while($rows=mysqli_fetch_assoc($result)){
+        ?>
+        <table width="400" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#F1D204">
             <tr>
                 <td><table width="400" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
                     <tr>
@@ -113,7 +103,7 @@ while($rows=mysqli_fetch_assoc($result)){
 
         <?php
 }
-mysqli_close($con); //close database
+mysqli_close($dbC); //close database
 ?>
     </main>
 

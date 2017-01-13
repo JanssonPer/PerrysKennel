@@ -24,13 +24,13 @@
     </header>
     <nav id="nav" role="navigation">
         <ul class ="topnav">
-            <li><a href="index.html">Hem</a></li>
+            <li><a href="index.php">Hem</a></li>
             <li><a href="minaHundar.html">Mina hundar</a></li>
-            <li><a href="kennel.html">Kennel</a></li>
-            <li><a href="hundskola.html">Hundskola</a></li>
+            <li><a href="kennel.php">Kennel</a></li>
+            <li><a href="hundskola.php">Hundskola</a></li>
             <li><a href="bildgalleri.html">Bildgalleri</a></li>
             <li><a href="gastbok.html">Gästbok</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="kontakt.php">Kontakt</a></li>
 
         </ul>
     </nav>
@@ -58,9 +58,32 @@
     </aside>
 
     <main role="main" id="content">
+    <?php
 
+    include 'dbconnect.php';
 
-</main>
+    /*$dbHost = 'localhost';
+    $dbUser = 'root';
+    $dbPass = '';
+    $dbName = 'perryskennel';
+    $dbTable = 'posts';
+    $dbC = mysqli_connect($dbHost, $dbUser, $dbPass, $dbName)
+    or die('Error Connecting to MySQL DataBase');*/
+
+    $sql = "SELECT * FROM kennel";
+    $result = mysqli_query($dbC, $sql);
+
+        echo("<table border=1, cellpadding='0'><tr><td align='left'>RegNr</td><td align='left'>Namn</td><td align='left'>Född</td><td align='left'>Kön</td><td align='left'>Färg</td><td align='left'>Höfter</td><td align='left'>Armbågar</td><td align='left'>Ögon</td><td align='left'>Utställning</td><td align='left'>Valpar</td></tr>");
+            while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            echo("<tr>");
+                foreach ($line as $col_value => $row_value) {
+                echo("<td>$row_value</td>");
+                }
+                echo("</tr>\n");
+            }
+            echo("</table>");
+    ?>
+    </main>
 
 <footer role="contentinfo">
 
